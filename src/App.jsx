@@ -260,7 +260,7 @@ function Contact() {
         </h2>
         <div className="contact-links">
           <a className="contact-link" href="mailto:malaviatanay@gmail.com">
-            malaviatanay@gmail.com
+            Email
           </a>
           <a
             className="contact-link"
@@ -268,7 +268,7 @@ function Contact() {
             target="_blank"
             rel="noreferrer"
           >
-            github.com/malaviatanay
+            GitHub
           </a>
           <a
             className="contact-link"
