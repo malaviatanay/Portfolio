@@ -15,7 +15,7 @@ const PROJECTS = [
       'Interactive web map of the Fresno State campus, built with a Scrum team — Mapbox-based navigation, AI-assisted building search, and OCR-parsed floor plans on a Supabase backend.',
     tags: ['Next.js', 'Mapbox GL', 'Supabase', 'AI/OCR'],
     year: '2026',
-    href: 'https://github.com/malaviatanay/Bulldog-Mapping',
+    href: 'https://bulldog-mapping-one.vercel.app/',
     accent: 'var(--accent-4)',
   },
   {
