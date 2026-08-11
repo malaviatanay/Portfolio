@@ -270,6 +270,14 @@ function Contact() {
           >
             github.com/malaviatanay
           </a>
+          <a
+            className="contact-link"
+            href="https://www.linkedin.com/in/tanay-malavia-7b85b5238/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
         </div>
       </Reveal>
     </section>
