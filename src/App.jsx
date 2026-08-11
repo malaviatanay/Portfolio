@@ -10,6 +10,15 @@ const NAV_LINKS = [
 
 const PROJECTS = [
   {
+    title: 'Bulldog Mapping',
+    blurb:
+      'Interactive web map of the Fresno State campus, built with a Scrum team — Mapbox-based navigation, AI-assisted building search, and OCR-parsed floor plans on a Supabase backend.',
+    tags: ['Next.js', 'Mapbox GL', 'Supabase', 'AI/OCR'],
+    year: '2026',
+    href: 'https://github.com/malaviatanay/Bulldog-Mapping',
+    accent: 'var(--accent-4)',
+  },
+  {
     title: 'SchemaGP',
     blurb:
       'End-to-end database design project: cleaned raw data, modeled a BCNF-normalized schema, and built SQL analytics queries with charted insights.',
