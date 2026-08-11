@@ -28,12 +28,12 @@ const PROJECTS = [
     accent: 'var(--accent)',
   },
   {
-    title: 'CSCI 164 — AI Final Project',
+    title: 'Applied-Machine-Learning-with-scikit-learn',
     blurb:
-      'Team of four building a machine learning system for our Artificial Intelligence course, from data pipeline through model evaluation.',
-    tags: ['Python', 'Machine Learning', 'scikit-learn'],
-    year: 'In progress · due Apr 2026',
-    href: '#',
+      'CSCI 164 final project with a four-person team: supervised learning on two datasets, three algorithms each, with hyperparameter tuning and comparison to prior published work.',
+    tags: ['Python', 'scikit-learn', 'Machine Learning'],
+    year: 'Apr 2026',
+    href: 'https://github.com/malaviatanay/Applied-Machine-Learning-with-scikit-learn',
     accent: 'var(--accent-2)',
   },
   {
