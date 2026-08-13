@@ -11,7 +11,7 @@ export const PROJECTS = [
     accent: 'var(--accent-4)',
     links: {
       live: 'https://bulldog-mapping-one.vercel.app/',
-      repo: 'https://github.com/malaviatanay/Bulldog-Mapping',
+      repo: 'https://github.com/malaviatanay/Bulldog-Mapping.',
     },
     stats: [
       { value: '5', label: 'person team' },
