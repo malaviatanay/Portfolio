@@ -12,8 +12,9 @@ export function Nav() {
   const [open, setOpen] = useState(false)
   return (
     <header className="nav">
-      <Link className="nav-brand" to="/">
-        TM
+      <Link className="nav-brand" to="/" aria-label="Tanay Malavia, home">
+        <span className="nav-mark">TM</span>
+        <span className="nav-name">Tanay Malavia</span>
       </Link>
       <nav className={`nav-links ${open ? 'nav-links-open' : ''}`}>
         {NAV_LINKS.map((link) => (
@@ -23,8 +24,9 @@ export function Nav() {
         ))}
       </nav>
       <button
-        className="nav-toggle"
+        className={`nav-toggle ${open ? 'nav-toggle-open' : ''}`}
         aria-label="Toggle navigation"
+        aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
       >
         <span />
@@ -37,8 +39,14 @@ export function Nav() {
 export function Footer() {
   return (
     <footer className="footer">
-      <span>Designed & built by Tanay Malavia</span>
-      <span>{new Date().getFullYear()}</span>
+      <span>© {new Date().getFullYear()} Tanay Malavia</span>
+      <button
+        type="button"
+        className="footer-top"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
+        Back to top ↑
+      </button>
     </footer>
   )
 }

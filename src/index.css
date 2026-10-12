@@ -1,16 +1,23 @@
 :root {
-  --bg: #0b0b0f;
-  --bg-soft: #131318;
-  --surface: #17171f;
-  --border: #26262f;
-  --text: #f4f4f6;
-  --text-dim: #a3a3ad;
-  --accent: #ff5a3c;
-  --accent-2: #7c5cff;
-  --accent-3: #2ee6a6;
-  --accent-4: #4dabf7;
-  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --bg: #08080a;
+  --bg-soft: #0d0d10;
+  --surface: #111114;
+  --surface-2: #16161a;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --text: #f2f0eb;
+  --text-dim: #9b9a97;
+  --text-faint: #6b6a68;
+  --accent: #ff8a5b;
+  --accent-2: #a594ff;
+  --accent-3: #5fd4a8;
+  --accent-4: #6cb6ff;
+  --font-display: 'Geist', 'Inter', system-ui, sans-serif;
+  --font-body: 'Geist', 'Inter', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', 'Times New Roman', serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --gutter: clamp(1.25rem, 5vw, 4rem);
   color-scheme: dark;
 }
 
@@ -20,6 +27,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
@@ -27,7 +35,10 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 img {
@@ -44,6 +55,18 @@ a {
 }
 
 ::selection {
-  background: var(--accent);
-  color: #0b0b0f;
+  background: var(--text);
+  color: var(--bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

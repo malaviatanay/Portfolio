@@ -167,22 +167,22 @@ export const PROJECTS = [
     },
     stats: [
       { value: '0', label: 'templates used' },
-      { value: '4', label: 'accent colors' },
+      { value: '3', label: 'typefaces, one system' },
     ],
     overview:
-      "Most portfolio templates read the same. The brief I gave myself: bold, dark, a little playful, and honest about what's actually behind each project — not just a link out to GitHub.",
+      "Most portfolio templates read the same. The brief I gave myself: quiet, dark, editorial, and honest about what's actually behind each project — not just a link out to GitHub.",
     approach: [
       {
         title: 'Start with a strong hero',
-        body: 'A gradient wordmark, one clear sentence about what I do, and no stock photography.',
+        body: 'Big type, one clear sentence about what I do, and no stock photography.',
       },
       {
         title: 'Design system before content',
-        body: 'Locked in a dark palette with four rotating accent colors, one display font, and consistent spacing before writing a single section.',
+        body: 'Locked in a near-monochrome palette with a single accent per project, a sans / serif-italic / mono type system, and consistent spacing before writing a single section.',
       },
       {
         title: 'Build it in React + Vite',
-        body: 'No template — hand-built components, scroll-triggered reveals via IntersectionObserver, and React Router for real per-project case study pages like this one.',
+        body: 'No template — hand-built components, scroll-triggered reveals via IntersectionObserver, cursor-following card highlights, and React Router for real per-project case study pages like this one.',
       },
       {
         title: 'Test it like a real product',

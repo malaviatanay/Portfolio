@@ -2,6 +2,33 @@ import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import { PROJECTS } from '../data/projects'
 
+function ArrowIcon({ className = '' }) {
+  return (
+    <svg
+      className={`icon-arrow ${className}`}
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M4.5 11.5l7-7M5.5 4.5h6v6"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+function trackSpotlight(event) {
+  const rect = event.currentTarget.getBoundingClientRect()
+  event.currentTarget.style.setProperty('--mx', `${event.clientX - rect.left}px`)
+  event.currentTarget.style.setProperty('--my', `${event.clientY - rect.top}px`)
+}
+
 const SKILLS = [
   {
     label: 'Languages',
@@ -20,24 +47,45 @@ const SKILLS = [
 function Hero() {
   return (
     <section id="top" className="hero">
-      <div className="hero-blob" aria-hidden="true" />
-      <p className="hero-eyebrow">Computer Science @ Fresno State</p>
-      <h1 className="hero-title">
-        Tanay Malavia
-        <span className="hero-title-sub">builds software & data systems.</span>
-      </h1>
-      <p className="hero-desc">
-        I design databases, wrangle data into shape, and build the machine
-        learning models that make sense of it. Currently looking for
-        internship opportunities where I can do all three.
-      </p>
-      <div className="hero-actions">
-        <a className="btn btn-primary" href="#work">
-          See my work
-        </a>
-        <a className="btn btn-ghost" href="#contact">
-          Get in touch
-        </a>
+      <div className="hero-grid" aria-hidden="true" />
+      <div className="hero-glow" aria-hidden="true" />
+      <div className="section-inner hero-inner">
+        <p className="hero-badge">
+          <span className="hero-badge-dot" aria-hidden="true" />
+          Open to internship opportunities
+        </p>
+        <h1 className="hero-title">
+          Tanay Malavia
+          <span className="hero-title-sub">builds software &amp; data systems.</span>
+        </h1>
+        <p className="hero-desc">
+          I design databases, wrangle data into shape, and build the machine
+          learning models that make sense of it. Currently looking for
+          internship opportunities where I can do all three.
+        </p>
+        <div className="hero-actions">
+          <a className="btn btn-primary" href="#work">
+            See my work
+            <ArrowIcon />
+          </a>
+          <a className="btn btn-ghost" href="#contact">
+            Get in touch
+          </a>
+        </div>
+        <dl className="hero-meta">
+          <div>
+            <dt>Studying</dt>
+            <dd>Computer Science, Fresno State</dd>
+          </div>
+          <div>
+            <dt>Focus</dt>
+            <dd>Data systems &amp; applied ML</dd>
+          </div>
+          <div>
+            <dt>Stack</dt>
+            <dd>Python · SQL · React</dd>
+          </div>
+        </dl>
       </div>
     </section>
   )
@@ -50,7 +98,7 @@ function About() {
         <div>
           <p className="section-kicker">01 · About</p>
           <h2 className="section-title">
-            I like problems that involve a lot of moving pieces.
+            I like problems with a lot of <em>moving pieces.</em>
           </h2>
         </div>
         <div className="about-copy">
@@ -79,7 +127,7 @@ function Projects() {
       <div className="section-inner">
         <Reveal as="div">
           <p className="section-kicker">02 · Selected work</p>
-          <h2 className="section-title">Things I've built.</h2>
+          <h2 className="section-title">Things I've <em>built.</em></h2>
         </Reveal>
         <div className="project-list">
           {PROJECTS.map((project, i) => (
@@ -89,10 +137,16 @@ function Projects() {
               to={`/projects/${project.slug}`}
               className="project-card"
               style={{ '--card-accent': project.accent, transitionDelay: `${i * 60}ms` }}
+              onMouseMove={trackSpotlight}
             >
+              <span className="project-spotlight" aria-hidden="true" />
               <div className="project-card-top">
-                <span className="project-index">0{i + 1}</span>
-                <span className="project-year">{project.year}</span>
+                <span className="project-index">
+                  0{i + 1} <span className="project-year">/ {project.year}</span>
+                </span>
+                <span className="project-arrow">
+                  <ArrowIcon />
+                </span>
               </div>
               <h3 className="project-title">{project.title}</h3>
               <p className="project-blurb">{project.blurb}</p>
@@ -103,7 +157,7 @@ function Projects() {
                   </span>
                 ))}
               </div>
-              <span className="project-cta">Read the case study →</span>
+              <span className="project-cta">Read the case study</span>
             </Reveal>
           ))}
         </div>
@@ -118,7 +172,7 @@ function Skills() {
       <div className="section-inner">
         <Reveal as="div">
           <p className="section-kicker">03 · Toolkit</p>
-          <h2 className="section-title">What I work with.</h2>
+          <h2 className="section-title">What I <em>work with.</em></h2>
         </Reveal>
         <div className="skills-grid">
           {SKILLS.map((group, i) => (
@@ -129,7 +183,7 @@ function Skills() {
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               <h3>{group.label}</h3>
-              <ul>
+              <ul className="chip-list">
                 {group.items.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
@@ -148,12 +202,13 @@ function Contact() {
       <Reveal as="div" className="section-inner contact-inner">
         <p className="section-kicker">04 · Contact</p>
         <h2 className="section-title contact-title">
-          Let's build something worth shipping.
+          Let's build something <em>worth shipping.</em>
         </h2>
+        <a className="contact-email" href="mailto:malaviatanay@gmail.com">
+          malaviatanay@gmail.com
+          <ArrowIcon />
+        </a>
         <div className="contact-links">
-          <a className="contact-link" href="mailto:malaviatanay@gmail.com">
-            Email
-          </a>
           <a
             className="contact-link"
             href="https://github.com/malaviatanay"
@@ -161,6 +216,7 @@ function Contact() {
             rel="noreferrer"
           >
             GitHub
+            <ArrowIcon />
           </a>
           <a
             className="contact-link"
@@ -169,6 +225,7 @@ function Contact() {
             rel="noreferrer"
           >
             LinkedIn
+            <ArrowIcon />
           </a>
         </div>
       </Reveal>
